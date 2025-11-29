@@ -66,7 +66,7 @@ export const SignInForm = () => {
               <InputPassword
                 id={field.name}
                 placeholder="Enter your password"
-                autoComplete="new-password"
+                autoComplete="current-password"
                 aria-invalid={fieldState.invalid}
                 disabled={isPending}
                 {...field}

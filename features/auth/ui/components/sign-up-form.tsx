@@ -159,7 +159,7 @@ export const SignUpForm = () => {
             <Field data-invalid={fieldState.invalid} className="gap-2">
               <InputPassword
                 id={field.name}
-                placeholder="Enter your confirm password"
+                placeholder="Confirm your password"
                 autoComplete="new-password"
                 aria-invalid={fieldState.invalid}
                 disabled={isPending}

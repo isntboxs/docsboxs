@@ -33,8 +33,8 @@ export const useSignIn = () => {
           fetchOptions: {
             onSuccess: () => {
               form.reset();
-              toast.success("Signed In successfully", {
-                description: "You can now sign in",
+              toast.success("Signed in successfully", {
+                description: "Welcome back!",
               });
               router.push(`/`);
             },

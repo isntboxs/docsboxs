@@ -9,7 +9,7 @@ import {
   InputGroupInput,
 } from "@/components/ui/input-group";
 
-type Props = React.ComponentProps<typeof InputGroupInput>;
+type Props = Omit<React.ComponentProps<typeof InputGroupInput>, "type">;
 
 export const InputPassword = (props: Props) => {
   const [showPassword, setShowPassword] = useState<boolean>(false);
@@ -20,13 +20,18 @@ export const InputPassword = (props: Props) => {
 
   return (
     <InputGroup>
-      <InputGroupInput type={showPassword ? "text" : "password"} {...props} />
+      <InputGroupInput {...props} type={showPassword ? "text" : "password"} />
       <InputGroupAddon>
         <LockKeyholeIcon />
       </InputGroupAddon>
 
       <InputGroupAddon align="inline-end">
-        <InputGroupButton onClick={togglePassword} size="icon-xs">
+        <InputGroupButton
+          onClick={togglePassword}
+          size="icon-xs"
+          aria-label={showPassword ? "Hide password" : "Show password"}
+          aria-pressed={showPassword}
+        >
           {showPassword ? <EyeClosedIcon /> : <EyeIcon />}
         </InputGroupButton>
       </InputGroupAddon>
